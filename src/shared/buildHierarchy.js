@@ -10,6 +10,10 @@ export default function buildHierarchy(json) {
         children: [],
         name: 'root'
     };
+
+    if (typeof modules === 'undefined') {
+        modules = json.children[0].modules;
+    }
     
     modules.forEach(function addToTree(module) {
         var size;
